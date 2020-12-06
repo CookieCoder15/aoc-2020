@@ -61,4 +61,5 @@ def count_valid_2(to_check, to_ignore):
 
 to_check = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid", "cid"]
 to_ignore = ["cid"]
+print(count_valid(to_check, to_ignore))
 print(count_valid_2(to_check, to_ignore))

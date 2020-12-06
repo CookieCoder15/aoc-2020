@@ -18,5 +18,5 @@ def sum_3():
                     return int(x)*int(y)*int(z)
 
 
-print("Part 1: " + str(sum_2()))
-print("Part 2: " + str(sum_3()))
+print(sum_2())
+print(sum_3())

@@ -1,6 +1,3 @@
-from os import remove
-
-
 file = open("input.txt", "r")
 content = file.read()
 content = content.split("\n")
