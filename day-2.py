@@ -31,9 +31,9 @@ def check_valid_2():
         char = temp[1][0]
         toCheck = temp[2]
         amount = 0
-        if toCheck[pos1-1] == char:
+        if toCheck[pos1 - 1] == char:
             amount += 1
-        if toCheck[pos2-1] == char:
+        if toCheck[pos2 - 1] == char:
             amount += 1
         if amount == 1:
             valid += 1

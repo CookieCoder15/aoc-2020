@@ -44,11 +44,15 @@ def count_valid_2(to_check, to_ignore):
                 valid = False
             elif fields["hgt"][-2:] != "cm" and fields["hgt"][-2:] != "in":
                 valid = False
-            elif fields["hgt"][-2:] == "cm" and (int(fields["hgt"][:-2]) < 150 or int(fields["hgt"][:-2]) > 193):
+            elif fields["hgt"][-2:] == "cm" and (
+                int(fields["hgt"][:-2]) < 150 or int(fields["hgt"][:-2]) > 193
+            ):
                 valid = False
-            elif fields["hgt"][-2:] == "in" and (int(fields["hgt"][:-2]) < 59 or int(fields["hgt"][:-2]) > 76):
+            elif fields["hgt"][-2:] == "in" and (
+                int(fields["hgt"][:-2]) < 59 or int(fields["hgt"][:-2]) > 76
+            ):
                 valid = False
-            elif not re.search(r'^#(?:[0-9a-fA-F]{3}){1,2}$', fields["hcl"]):
+            elif not re.search(r"^#(?:[0-9a-fA-F]{3}){1,2}$", fields["hcl"]):
                 valid = False
             elif fields["ecl"] not in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]:
                 valid = False

@@ -14,23 +14,23 @@ def get_ids(rows, columns):
         column = 0
         for y in x[0:6]:
             if y == "F":
-                max_row -= round((max_row-min_row)/2)
+                max_row -= round((max_row - min_row) / 2)
             else:
-                min_row += round((max_row-min_row)/2)
+                min_row += round((max_row - min_row) / 2)
         if x[6] == "F":
             row = min_row
         else:
             row = max_row
         for y in x[7:9]:
             if y == "L":
-                max_column -= round((max_column-min_column)/2)
+                max_column -= round((max_column - min_column) / 2)
             else:
-                min_column += round((max_column-min_column)/2)
+                min_column += round((max_column - min_column) / 2)
         if x[9] == "L":
             column = min_column
         else:
             column = max_column
-        ids.append(row*8+column)
+        ids.append(row * 8 + column)
     ids.sort()
     return ids
 
@@ -48,12 +48,12 @@ def find_missing_id(rows, columns):
     ids = get_ids(rows, columns)
     id = 0
     i = 0
-    while i < len(ids)-1:
-        if ids[i+1] - ids[i] != 2:
+    while i < len(ids) - 1:
+        if ids[i + 1] - ids[i] != 2:
             ids.remove(ids[i])
         else:
             i += 1
-    id = ids[0]+1
+    id = ids[0] + 1
     return id
 
 

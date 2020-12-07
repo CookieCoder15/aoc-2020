@@ -29,6 +29,7 @@ def removeDup(str):
 
 def commonChars(list):
     from collections import Counter
+
     counts = Counter(list[0])
     for str in list:
         counts &= Counter(str)

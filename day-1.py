@@ -7,7 +7,7 @@ def sum_2():
     for x in content:
         for y in content:
             if int(x) + int(y) == 2020:
-                return int(x)*int(y)
+                return int(x) * int(y)
 
 
 def sum_3():
@@ -15,7 +15,7 @@ def sum_3():
         for y in content:
             for z in content:
                 if int(x) + int(y) + int(z) == 2020:
-                    return int(x)*int(y)*int(z)
+                    return int(x) * int(y) * int(z)
 
 
 print(sum_2())

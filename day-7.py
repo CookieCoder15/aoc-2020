@@ -23,11 +23,10 @@ def process_data():
             x = 4
             while x < len(rule):
                 cont_quantity = int(rule[x])
-                cont_adj = rule[x+1]
-                cont_color = rule[x+2]
+                cont_adj = rule[x + 1]
+                cont_color = rule[x + 2]
                 cont_contains = ["fill_me"]
-                contains.append(
-                    Bag(cont_adj, cont_color, cont_contains, cont_quantity))
+                contains.append(Bag(cont_adj, cont_color, cont_contains, cont_quantity))
                 x += 4
         bags.append(Bag(adj, color, contains, quantity))
     for i in bags:
@@ -55,7 +54,7 @@ def count_valid_bags(bags, adj, color, layer):
                 if y.adj == adj and y.color == color:
                     amount += 1
                 else:
-                    if count_valid_bags(y.bags, adj, color, layer+1) > 0:
+                    if count_valid_bags(y.bags, adj, color, layer + 1) > 0:
                         amount += 1
                         break
     return amount
