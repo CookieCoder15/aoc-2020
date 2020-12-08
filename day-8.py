@@ -7,25 +7,19 @@ def run_instructions(instructions):
     i = 0
     run_actions = []
     accumulator = 0
-    loop = False
-    while i < len(instructions) and i not in run_actions:
+    will_loop = False  # Loop variable used in part 2.
+    while i < len(instructions) and not will_loop:
         run_actions.append(i)
         if instructions[i][0:3] == "nop":
             i += 1
         elif instructions[i][0:3] == "acc":
-            if instructions[i][4] == "+":
-                accumulator += int(instructions[i][5:])
-            else:
-                accumulator -= int(instructions[i][5:])
+            accumulator += int(instructions[i][4:])
             i += 1
         elif instructions[i][0:3] == "jmp":
-            if instructions[i][4] == "+":
-                i += int(instructions[i][5:])
-            else:
-                i -= int(instructions[i][5:])
+            i += int(instructions[i][4:])
         if i in run_actions:
-            loop = True
-    return accumulator, loop
+            will_loop = True
+    return accumulator, will_loop
 
 
 def find_fix():
