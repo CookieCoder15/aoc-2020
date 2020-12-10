@@ -11,13 +11,6 @@ while i < len(content):
 content.sort()
 
 
-def valid_jump(new, old):
-    if new - old <= 3:
-        return True
-    else:
-        return False
-
-
 def count_jolt_diff(diff):
     joltage = 0
     max_joltage = content[-1] + 3
