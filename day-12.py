@@ -64,29 +64,18 @@ def find_manhattan_distance_waypoint():
         elif i[0] == "F":
             coords[0] += waypoint_coords[0] * i[1]
             coords[1] += waypoint_coords[1] * i[1]
-        elif i[0] == "L":
+        elif i[0] == "L" or i[0] == "R":
+            facing = 1 if i[0] == "R" else -1
             new_x, new_y = waypoint_coords
             if i[1] == 90:
-                new_x = -waypoint_coords[1]  # -y
-                new_y = waypoint_coords[0]
+                new_x = waypoint_coords[1] * facing  # -y * facing
+                new_y = -waypoint_coords[0] * facing
             if i[1] == 180:
                 new_x = -waypoint_coords[0]
                 new_y = -waypoint_coords[1]
             if i[1] == 270:
-                new_x = waypoint_coords[1]
-                new_y = -waypoint_coords[0]
-            waypoint_coords = [new_x, new_y]
-        elif i[0] == "R":
-            new_x, new_y = waypoint_coords
-            if i[1] == 270:
-                new_x = -waypoint_coords[1]  # -y
-                new_y = waypoint_coords[0]
-            if i[1] == 180:
-                new_x = -waypoint_coords[0]
-                new_y = -waypoint_coords[1]
-            if i[1] == 90:
-                new_x = waypoint_coords[1]
-                new_y = -waypoint_coords[0]
+                new_x = -waypoint_coords[1] * facing
+                new_y = waypoint_coords[0] * facing
             waypoint_coords = [new_x, new_y]
     return abs(coords[0]) + abs(coords[1])
 
