@@ -64,10 +64,7 @@ def get_addresses(addr_parts):
 
 
 def sum_all_values(memory):
-    amount = 0
-    for i in memory.values():
-        amount += int(i, 2)
-    return amount
+    return sum(map(lambda i: int(i, 2), memory.values()))
 
 
 print(sum_all_values(initalize()))
